@@ -7,4 +7,4 @@
 echo "Sub script PID: $$"
 
 # Change directory to demonstrate the impact
-cd /tmp
+cd /tmp || exit
