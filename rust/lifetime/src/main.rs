@@ -2,6 +2,10 @@ fn main() {
     let mut a: &str = "aa";
     let mut c: &str;
 
+    // This will cause an error since num doesn't live long enough
+    // let num = 0;
+    // let num_pointer: &'static i32 = &num;
+
     {
         // this still works because the lifetime of "ccc" is static
         let b: &str = "ccc";
