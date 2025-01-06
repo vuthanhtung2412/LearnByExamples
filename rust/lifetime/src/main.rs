@@ -32,11 +32,12 @@ fn main() {
         // which is the same as the underlying value which ends when deallocation happen (end of the scope)
         // let b: &str = &s; 
        
-        // 
-        // The lifetime calculation will proceed like below
+        // The lifetime calculation will proceed like below. 
+        // In the calculation please think lifetime as blocks in memory 
         c = b;                   // ---------+-- 'c = `b
         println!("{}", c);       //          |
         c = longest(a, b); //          +-- 'c = `b U 'a
+        println!("{}", c);       //          |
     }                            //          +-- the liveness continue since the current value of c is used in the `longest()` function below
                                  //          |
     a = "aaaa";                  //          |
